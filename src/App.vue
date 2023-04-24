@@ -9,8 +9,8 @@
           <img src="@/assets/image/logo.svg" alt="logo" />
         </div>
         <div class="search">
-          <el-input class="w-50 m-2" size="large" placeholder="Search here.." :suffix-icon="Search" />
-          <el-select v-model="selectValue"  placeholder="By All" style="width: 115px; margin-left: 8px">
+          <el-input v-model="inputValue" class="w-50 m-2" size="large" placeholder="Search here.." :suffix-icon="Search" />
+          <el-select v-model="selectValue"  placeholder="By All" style="width: 170px; margin-left: 8px">
             <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"/>
           </el-select>
         </div>
@@ -170,6 +170,7 @@ components: {
 const isCollapse = ref(true)
 const selectValue = ref(0)
 const countryValue = ref(0)
+const inputValue = ref('')
 
 const options = [
   {

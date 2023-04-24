@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const selectValue = ref('HR Announcement')
+const selectValue = ref(0)
 
 const options = [
   {
-    value: 'HR Announcement',
+    value: 0,
     label: 'HR Announcement',
   },
   {
-    value: 'News',
+    value: 1,
     label: 'News',
   },
   {
-    value: 'All',
+    value: 2,
     label: 'All',
   },
 ]

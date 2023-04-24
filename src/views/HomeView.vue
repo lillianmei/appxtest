@@ -47,7 +47,7 @@ let contentItem = reactive({
 const collect = (index) => {
   console.log(index)
   for (let i = 0; i < contentItem.data.length; i++) {
-    if (index == i) {
+    if (index === i) {
       contentItem.data.splice(i, 1)
     }
   }

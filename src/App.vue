@@ -10,10 +10,8 @@
         </div>
         <div class="search">
           <el-input class="w-50 m-2" size="large" placeholder="Search here.." :suffix-icon="Search" />
-          <el-select placeholder="By All" style="width: 115px; margin-left: 8px">
-            <el-option label="By All" value="1" />
-            <el-option label="By Station" value="2" />
-            <el-option label="By Country" value="3" />
+          <el-select v-model="selectValue"  placeholder="By All" style="width: 115px; margin-left: 8px">
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"/>
           </el-select>
         </div>
       </el-col>
@@ -23,10 +21,8 @@
           <span>09:54 am</span>
         </div>
         <div class="country-select">
-          <el-select placeholder="Antananarivo" style="width: 130px; margin-left: 8px">
-            <el-option label="Antananarivo" value="1" />
-            <el-option label="HongKong" value="2" />
-            <el-option label="Tokyo" value="3" />
+          <el-select v-model="countryValue" placeholder="Antananarivo" style="width: 130px; margin-left: 8px">
+            <el-option v-for="item in countryOptions" :key="item.value" :label="item.label" :value="item.value"/>
           </el-select>
         </div>
         <div class="setting"></div>
@@ -172,6 +168,38 @@ components: {
   search
 }
 const isCollapse = ref(true)
+const selectValue = ref(0)
+const countryValue = ref(0)
+
+const options = [
+  {
+    value: 0,
+    label: 'By All',
+  },
+  {
+    value: 1,
+    label: 'By Station',
+  },
+  {
+    value: 2,
+    label: 'By Country',
+  },
+]
+const countryOptions = [
+  {
+    value: 0,
+    label: 'Antananarivo',
+  },
+  {
+    value: 1,
+    label: 'HongKong',
+  },
+  {
+    value: 2,
+    label: 'Tokyo',
+  },
+]
+
 
 const collapse = () => {
   isCollapse.value = !isCollapse.value
